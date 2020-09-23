@@ -37,8 +37,23 @@ jobs:
       # TODO: Add a stage for running cypress tests
       - name: Cypress run
         uses: cypress-io/github-action@v2
+          with:
+            start: npm run start:test
+            browser: chrome
 
       # TODO: Add a stage to generate cypress videos and screenshots as artifacts
+      # - name:
+      #   - uses: actions/upload-artifact@v1
+      #     if: failure()
+      #     with:
+      #       name: cypress-screenshots
+      #       path: cypress/screenshots
+      #   # Test run video was always captured, so this action uses "always()" condition
+      #   - uses: actions/upload-artifact@v1
+      #     if: always()
+      #     with:
+      #       name: cypress-videos
+      #       path: cypress/videos
 
       # Stage to deploy application to github page
       - name: Deploy
