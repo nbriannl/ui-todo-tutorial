@@ -35,8 +35,8 @@ jobs:
         run: npm run test
 
       # TODO: Add a stage for running cypress tests
-      - name: Run E2E tests
-        run: npm run cypress:open
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
 
       # TODO: Add a stage to generate cypress videos and screenshots as artifacts
 
